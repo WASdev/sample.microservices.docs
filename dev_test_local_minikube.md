@@ -22,7 +22,7 @@ This is the simplest way for a developer to get the sample up and running locall
 1. `mvn clean package` in each ../sample.microservicebuilder.* projects except docs.
 1. If you have not done so already, ensure that your Docker CLI is targeting the minikube Docker engine with `minikube docker-env`.
 1. `docker build -t [name] .` in each ../sample.microservicebuilder.* projects except docs, where [name] is the image name given in the deployment YAML in the `manifests` directory for the project. For reference, the image names are mapped as follows:
-   * sample.microservicebuilder.web-app: `microservice-webapp`
+   * sample.microservicebuilder.web-app: `web-application`
    * sample.microservicebuilder.vote: `microservice-vote`
    * sample.microservicebuilder.schedule: `microservice-schedule`
    * sample.microservicebuilder.speaker: `microservice-speaker`
