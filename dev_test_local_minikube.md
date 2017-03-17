@@ -10,7 +10,7 @@ This is the simplest way for a developer to get the sample up and running locall
 
 ## Install the Microservice Builder Sample application
 
-1. Install [minikube](https://github.com/kubernetes/minikube/releases).
+1. Install [minikube](https://microservicebuilder.mybluemix.net/docs/minikube.html).
 1. Install the [Microservice Builder fabric](https://microservicebuilder.mybluemix.net/docs/installing_fabric_task.html) - these are various services that run on top of Kubernetes.
 1. Enable ingress with the command `minikube addons enable ingress`.
 1. `git clone` the following projects:
@@ -20,7 +20,13 @@ This is the simplest way for a developer to get the sample up and running locall
    1. [sample.microservicebuilder.speaker](https://github.com/WASdev/sample.microservicebuilder.speaker)
    1. [sample.microservicebuilder.session](https://github.com/WASdev/sample.microservicebuilder.session)
 1. `mvn clean package` in each ../sample.microservicebuilder.* projects except docs.
-1. `docker build -t [name] .` in each ../sample.microservicebuilder.* projects except docs, where [name] is the argument passed to `utils.dockerBuild()` in the `Jenkinsfile` in that project's root directory.
+1. If you have not done so already, ensure that your Docker CLI is targeting the minikube Docker engine with `minikube docker-env`.
+1. `docker build -t [name] .` in each ../sample.microservicebuilder.* projects except docs, where [name] is the image name given in the deployment YAML in the `manifests` directory for the project. For reference, the image names are mapped as follows:
+   * sample.microservicebuilder.web-app: `microservice-webapp`
+   * sample.microservicebuilder.vote: `microservice-vote`
+   * sample.microservicebuilder.schedule: `microservice-schedule`
+   * sample.microservicebuilder.speaker: `microservice-speaker`
+   * sample.microservicebuilder.session: `microservice-session`
 1. Deploy each microservice from its root directory with the command `kubectl apply -f manifests`.
 1. Use `kubectl get ing` to determine the address of the `web-application-ingress`. Open this location in a web browser to access the sample. 
 
