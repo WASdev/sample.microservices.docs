@@ -42,7 +42,7 @@ Deployment process:
   kubectl apply -f target/manifests
   cd ../sample.microservicebuilder.schedule
   mvn clean package -P security
-  docker build -t microservice-schedule .
+  docker build -t microservice-schedule -f DockerfileSecured .
   kubectl apply -f manifests-secure
   cd ../sample.microservicebuilder.web-app
   mvn clean package -P security
