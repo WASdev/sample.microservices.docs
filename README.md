@@ -1,5 +1,5 @@
 # About the sample application
-The Microservice Builder sample application is a modified fork of the [Microprofile Showcase Application](https://github.com/microprofile/microprofile-conference). Like its parent it's a web application for managing a conference and is based on a number of discrete microservices. The front end is written in Angular; the backing microservices are in Java. All run on WebSphere Liberty, in Docker containers managed by Kubernetes. The sample application demonstrates various Microservice Builder features:
+The [Microservice Builder](https://developer.ibm.com/microservice-builder/) sample application is a modified fork of the [Microprofile Showcase Application](https://github.com/microprofile/microprofile-conference). Like its parent it's a web application for managing a conference and is based on a number of discrete microservices. The front end is written in Angular; the backing microservices are in Java. All run on WebSphere Liberty, in Docker containers managed by Kubernetes. The sample application demonstrates various Microservice Builder features:
 - Microservices running as WebSphere Liberty Docker containers on Kubernetes
 - Optional deployment via a Jenkins-based build pipeline
 - ELK log stack integration
