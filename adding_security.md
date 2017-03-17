@@ -28,18 +28,18 @@ Deployment process:
 1. Uninstall web-application and schedule-service if they are present. 
 ```
   kubectl delete deployment microservice-schedule-sample
-  kubectl delete deployment microservice-web-application
+  kubectl delete deployment microservice-webapp-sample
   kubectl delete service schedule-service
-  kubectl delete service webapplication-service
+  kubectl delete service webapp-service
   kubectl delete ingress schedule-ingress
-  kubectl delete ingress webapplication-ingress
+  kubectl delete ingress web-application-ingress
 ```
 1. Build and deploy the SSO service, schedule service and web application with security enabled.
 ```
   cd sample.microservicebuilder.ssoserver
   mvn clean package
   docker build -t microservice-ssoserver .
-  kubectl apply -f manifests
+  kubectl apply -f target/manifests
   cd ../sample.microservicebuilder.schedule
   mvn clean package -P security
   docker build -t microservice-schedule .
