@@ -21,7 +21,7 @@ Deployment process:
  
      ``kubectl create configmap ipaddr-config --from-literal=EXTERNAL_IP_ADDR=(your minikube ip)``
       
-1. Clone or download the sample.microservicebuilder.ssoserver repository.       
+1. Clone or download the [sample.microservicebuilder.ssoserver](https://github.com/WASdev/sample.microservicebuilder.ssoserver) repository.       
       
 1. In sample.microservicebuilder.ssoserver, ``edit src/main/liberty/userids.xml and set your desired userid(s) and password(s).``  A Kubernetes secret will be created from this file during the build. 
 
