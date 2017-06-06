@@ -14,6 +14,7 @@ The main installation steps are:
 1. Install prerequisite tools
 1. Install Kubernetes (minikube or CFC)
 1. Install the 'fabric' - extra infrastructure services on top of Kubernetes
+1. Install the 'sample ELK' - Elasticsearch, Logstash, and Kibana stack for monitoring metrics
 1. Optionally install and configure Jenkins
 1. Install or deploy the sample application
 
