@@ -10,8 +10,7 @@ This is the simplest way for a developer to get the sample up and running locall
 
 ## Install the Microservice Builder Sample application
 
-1. Install [minikube](https://microservicebuilder.mybluemix.net/docs/minikube.html).
-1. Install the [Microservice Builder fabric](https://microservicebuilder.mybluemix.net/docs/installing_fabric_task.html) - these are various services that run on top of Kubernetes.
+1. Install minikube and the Microservice Builder fabric as described in [Running Kubernetes in your development environment](https://www.ibm.com/support/knowledgecenter/SS5PWC/setup.html).
 1. Install the [Microservice Builder ELK Sample](https://github.com/WASdev/sample.microservicebuilder.helm.elk) - Elasticsearch, Logstash, and Kibana stack used for monitoring metrics.
 1. Enable ingress with the command `minikube addons enable ingress`.
 1. `git clone` the following projects:
