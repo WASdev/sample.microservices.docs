@@ -21,13 +21,18 @@ This is the simplest way for a developer to get the sample up and running locall
    1. [sample.microservicebuilder.session](https://github.com/WASdev/sample.microservicebuilder.session)
 1. `mvn clean package` in each ../sample.microservicebuilder.* projects except docs.
 1. If you have not done so already, ensure that your Docker CLI is targeting the minikube Docker engine with `minikube docker-env`.
-1. `docker build -t [name] .` in each ../sample.microservicebuilder.* projects except docs, where [name] is the image name given in the deployment YAML in the `manifests` directory for the project. For reference, the image names are mapped as follows:
+1. `docker build -t [name] .` in each ../sample.microservicebuilder.* projects except docs, where [name] is the image name given in the deployment YAML in the `chart` directory for the project. For reference, the image names are mapped as follows:
    * sample.microservicebuilder.web-app: `web-application`
    * sample.microservicebuilder.vote: `microservice-vote`
    * sample.microservicebuilder.schedule: `microservice-schedule`
    * sample.microservicebuilder.speaker: `microservice-speaker`
    * sample.microservicebuilder.session: `microservice-session`
-1. Deploy each microservice from its root directory with the command `kubectl apply -f manifests`.
+1. Deploy each microservice from its root directory with the following helm install command.
+   * sample.microservicebuilder.web-app: `helm install --name=web-app chart/web-application`
+   * sample.microservicebuilder.vote: `helm install --name=vote chart/microservice-vote`
+   * sample.microservicebuilder.schedule: `helm install --name=schedule chart/microservice-schedule`
+   * sample.microservicebuilder.speaker: `helm install --name=speaker chart/microservice-speaker`
+   * sample.microservicebuilder.session: `helm install --name=session chart/microservice-session`   
 1. Use `kubectl get ing` to determine the address of the `web-application-ingress`. Open this location in a web browser to access the sample. 
 
 ## Modifying the sample
