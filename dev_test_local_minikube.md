@@ -7,6 +7,7 @@ This is the simplest way for a developer to get the sample up and running locall
 * Install a Git client to obtain the sample code.
 * Install [Maven](https://maven.apache.org/download.cgi) and a Java 8 JDK.
 * Install a [Docker](https://docs.docker.com/engine/installation/) engine.
+* Install and initialize the [Helm client](https://docs.helm.sh/using_helm/#installing-helm).
 
 ## Install the Microservice Builder Sample application
 
