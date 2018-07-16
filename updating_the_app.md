@@ -1,6 +1,6 @@
 ### Updating the application
 
-Once you've made some code changes, you'll want to redeploy the app. But `helm upgrade --install [name] chart/[name]` will say there's nothing to do unless the associated deployment yaml is modified. In a production setting this would occur by setting the specific version of the associated image. In our pipeline, we replace `imageName:latest` with `imageName:gitCommitId` to work around this. When testing locally you can add another label to spec.template.metadata.labels, or modify the value of an existing one. For example,
+Once you've made some code changes, you'll want to redeploy the app. But `helm upgrade --install [name] chart/[name]` will say there's nothing to do unless the associated deployment yaml is modified. In a production setting this would occur by setting the specific version of the associated image. When testing locally you can add another label to spec.template.metadata.labels, or modify the value of an existing one. For example,
 
 ```
 spec:
@@ -11,7 +11,7 @@ spec:
         name: webapp-deployment
 ```
 
-can become
+can become:
 
 ```
 spec:
@@ -23,7 +23,7 @@ spec:
         dummy: version1
 ```
 
-and then next time,
+and then next time:
 
 ```
 spec:
@@ -35,5 +35,4 @@ spec:
         dummy: version2
 ```
 
-There's a bug in kube where this will sometimes not work. Do please help us understand,
-better work around, document, track and perhaps even fix this problem.
+There's a bug in Kubernetes where this will sometimes not work. Do please help us understand, better work around, document, track and perhaps even fix this problem.

@@ -21,9 +21,9 @@ Deployment process:
  
      ``kubectl create configmap ipaddr-config --from-literal=EXTERNAL_IP_ADDR=(your minikube ip)``
       
-1. Clone or download the [sample.microservicebuilder.ssoserver](https://github.com/WASdev/sample.microservicebuilder.ssoserver) repository.       
+1. Clone or download the [sample.microservices.ssoserver](https://github.com/WASdev/sample.microservices.ssoserver) repository.       
       
-1. In sample.microservicebuilder.ssoserver, ``edit src/main/liberty/userids.xml and set your desired userid(s) and password(s).``  A Kubernetes secret will be created from this file during the build. 
+1. In sample.microservices.ssoserver, ``edit src/main/liberty/userids.xml and set your desired userid(s) and password(s).``  A Kubernetes secret will be created from this file during the build. 
 
 1. Uninstall web-application and schedule-service if they are present. 
 ```
@@ -36,15 +36,15 @@ Deployment process:
 ```
 1. Build and deploy the SSO service, schedule service and web application with security enabled.
 ```
-  cd sample.microservicebuilder.ssoserver
+  cd sample.microservices.ssoserver
   mvn clean package
   docker build -t microservice-ssoserver .
   kubectl apply -f target/manifests
-  cd ../sample.microservicebuilder.schedule
+  cd ../sample.microservices.schedule
   mvn clean package -P security
   docker build -t microservice-schedule -f DockerfileSecured .
   kubectl apply -f manifests-secure
-  cd ../sample.microservicebuilder.web-app
+  cd ../sample.microservices.web-app
   mvn clean package -P security
   docker build -t web-application .
   kubectl apply -f manifests-secure
